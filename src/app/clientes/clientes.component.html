@@ -1,0 +1,48 @@
+<h1>Clientes</h1>
+
+<div>
+  <section>
+    <button mat-flat-button (click)="goToAgentes()">
+      <mat-icon aria-hidden="false" aria-label="Volver">arrow_back</mat-icon>
+      Volver
+    </button>
+  </section>
+</div>
+
+<div class="mat-elevation-z8">
+  <mat-form-field>
+    <mat-label>Filtrar</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="pareametro de busqueda">
+  </mat-form-field>
+
+ 
+  
+ 
+
+  <table mat-table [dataSource]="dataSource" matSort>
+    <!-- Nombre Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+      <td mat-cell *matCellDef="let cliente"> {{cliente.nombre}} </td>
+    </ng-container>
+
+ 
+    <ng-container matColumnDef="tiempoEspera">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tiempo de Espera (seg) </th>
+      <td mat-cell *matCellDef="let cliente"> {{cliente.tiempoEspera}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let cliente; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator
+  [length]="dataSource?.data?.length || 0"
+  [pageSize]="5"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  showFirstLastButtons
+  (page)="onPageChange($event)"
+>
+</mat-paginator>
+
+</div>

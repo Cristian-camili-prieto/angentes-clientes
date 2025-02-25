@@ -1,0 +1,45 @@
+table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 20%;
+    margin-right: 80%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+.mat-elevation-z8{
+    width: 70%;
+    display: inline-block;
+}
+
+th.mat-header-cell {
+    cursor: pointer;
+  }
+  
+  .mat-sort-header-arrow {
+    opacity: 1 !important;
+  }
+
+
+  section {
+   text-align: end;
+  }
+  
+  .example-form mat-slide-toggle {
+    margin: 8px 0;
+    display: block;
+  }
+  
+  .Checked{
+    text-align: justify;
+  }
+  
+  .action-buttons{
+text-align: end;
+  }
